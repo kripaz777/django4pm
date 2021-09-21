@@ -2,8 +2,9 @@ from django.shortcuts import render
 from .models import *
 # Create your views here.
 def home(request):
-
-	return render(request,'index.html')
+	views = {}
+	views['feedback'] = Feedback.objects.all()
+	return render(request,'index.html',views)
 
 
 
